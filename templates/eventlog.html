@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Main Event Log{% endblock %}
+
+{% block main %}
+
+Log file of all searches / updates<br>
+
+
+    {% for l in usrquery %}
+    {{ l.id }}
+    {{ l.log_event }}
+        {{ l.date }}
+        {{ l.time}}
+        {{ l.city }}
+        {{ l.temperature }}
+
+
+   
+
+    {% endfor %}
+{% endblock %} 
