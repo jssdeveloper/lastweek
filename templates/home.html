@@ -1,47 +1,28 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 
-
-
 {% block main %}
 
-<h1 class="display-3 fw-normal lh-1 mt-4 mb-4 text-center">Home Week #4</h1>
+<h1 class="display-3 fw-normal lh-1 mt-4 mb-4 text-center">Week #4</h1>
 
 <hr class="featurette-divider mb-4">
-<div class="row">
-    <div class="col-4">
-        <img class="homeimage" src="static/img1.png" alt="">
-    </div>
-    
-    <div class="col-8">
-        <h2 class="display-5 fw-normal lh-1">Search a specific city weather</h2>
-        <p class="lead justifytext">Head to "Cities" and and add cities to your custom cities to enjoy the engineering marvels Flask framework gives you today!</p>
-    </div>
-</div>
 
-<hr class="featurette-divider">
-<div class="row">
-    <div class="col-8">
-        <h2 class="display-5 fw-normal lh-1">Search a specific city weather</h2>
-        <p class="lead justifytext">Head to "Cities" and and add cities to your custom cities to enjoy the engineering marvels Flask framework gives you today!</p>
-    </div>
-    
-    <div class="col-4">
-        <img class="homeimage" src="static/img2.png" alt="">
-       
-    </div>
-</div>
+<h2 class="display-6 fw-normal lh-1 text-center">Task #1: Weather search</h2>
+<p class="lead text-center">Record each weather search in the log file.<br/>
+    Log: Date, Time, City, Temperature.<br/>
+    Technologies used: sqlite database, flask, SQLAlchemy and weather API</p>
 
-<hr class="featurette-divider">
-<div class="row">
-    <div class="col-4">
-        <img class="homeimage" src="static/img3.png" alt="">
-    </div>
-    
-    <div class="col-8">
-        <h2 class="display-5 fw-normal lh-1">And lastly, Admin Panel</h2>
-        <p class="lead justifytext">"Admin Panel" lets you add and remove users.</p>
-    </div>
-</div>
+<hr class="featurette-divider mb-4 mt-2">
+
+<h2 class="display-6 fw-normal lh-1 text-center">Task #2: Create Log</h2>
+<p class="lead text-center">Create a route /log<br>
+    Display data for the last 5 searches<br>
+    Think about persistent data. The last 5 searches must be displayed even after flask is restarted<br>
+    Technologies used: sqlite, flask, SQLAlchemy</p>
+
+<hr class="featurette-divider mb-4 mt-2">
+
+<h2 class="display-6 fw-normal lh-1 text-center">Task 3: Extended Log and Login</h2>
+<p class="lead justifytext text-center">Create a route /cities, Display the current list of cities of interest and their current temperature (updates on list change), Let the user add the city to the list, Let the user change list entry (change city name), Let the user delete the city from the list, Record add/change/delete events to log file, Let the user manually refresh the currently listed cities’ temperature data, The current list and temperature must persist after the flask is restarted, Optional advanced task: implement this for multiple users (identified by login)</p>
 
 {% endblock %} 

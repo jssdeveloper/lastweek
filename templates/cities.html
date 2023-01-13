@@ -3,6 +3,82 @@
 
 {% block main %}
 
-List of cities of interest
+<h1 class="display-3 fw-normal lh-1 mt-4 mb-4 text-center">Cities Weather</h1>
+<hr class="featurette-divider">
+
+<!-- SEARCH CITY MAIN CARD -->
+{% if city %}
+<div class="row">
+    <div class="col-lg-3">
+        <!-- reserved for graphics -->
+    </div>
+    <div class="col-lg-6 text">
+        <h1 class="display-3 text-muted text-center">{{ city }}</h1>
+        <h1 class="display-3 text-muted text-center">{{ api_temp }} °</h1>
+    </div>
+    <div class="col-lg-3">
+        <!-- reserved for graphics -->
+    </div>
+</div>
+{% endif %}
+
+<!-- SEARCH FUNCTION -->
+<form action="/searchcity" method="POST">
+    <div class="form-group">
+        <input class="form-control mt-2 rounded-pill text-center" type="text" name="form_search" placeholder="Search a cty">
+        <div class="d-grid">
+            <button class="btn btn-success btn-block mt-2 rounded-pill" type="submit">Search</button>
+        </div>
+    </div>
+</form>
+
+<!-- ADD FUNCTION -->
+{% if city %}
+<a href="/addcity/{{ city }}/{{ api_temp }}">
+    <div class="d-grid">
+        <button class="btn btn-outline-dark btn-block mt-2 rounded-pill" type="submit">Add City To The List</button>
+    </div>
+</a>
+{% endif %}
+
+
+<!-- REFRESH DATA TO BE DONE!!!!!!!-->
+<a href="/updateall">
+    <div class="d-grid">
+        <button class="btn btn-outline-dark btn-block mt-2 rounded-pill" type="submit">Refresh data</button>
+    </div>
+</a>
+
+
+<!-- WEATHER CARDS -->
+<div class="container">
+    <div class="row text-center">
+        
+        <!-- SINGLE CARD ITEM -->
+        {% for city in cityquery %}
+        <div class="col-xl-3 col-sm-6 mt-3 mb-5">
+            <div class="bg-white shadow-sm py-3 px-2">
+                <h5 class="mb-0">{{ city.city }}</h5><span class="display-3 text-uppercase text-muted">{{ city.temperature }}°</span>
+
+
+                <!-- EDIT CARD ITEM -->
+                <a href="/update/{{ city.city }}/{{ city.id }}",action="POST">
+                    <div class="d-grid">
+                        <button class="btn btn-outline-dark btn-block mt-2 rounded-pill" type="submit">Edit City</button>
+                    </div>
+                </a>
+
+                <!-- REMOVE CARD ITEM -->
+                <a href="/removecity/{{city.id}}",action="POST">
+                    <div class="d-grid">
+                        <button class="btn btn-outline-danger btn-block mt-2 rounded-pill" type="submit">Remove</button>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
 
 {% endblock %} 

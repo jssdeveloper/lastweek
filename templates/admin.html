@@ -15,21 +15,16 @@
     </div>
 </form>
 
-
-
-
-
 <div class="row mt-4">
 {% for user in usrquery %}
-<div class="col-md-4 text-center mt-4 mb-4">
-{{ user.id }} Username: {{ user.username }} <br/> Password: {{ user.password }}
+    <div class="col-md-4 text-center mt-4 mb-4">
+    {{ user.id }} Username: {{ user.username }} <br/> Password: {{ user.password }}
 
-<a href="/removeuser/{{ user.id }}",action="POST">
-<div class="d-grid">
-    <button class="btn btn-danger btn-block mt-2 rounded-pill" type="submit">Remove</button>
+    <a href="/removeuser/{{ user.id }}",action="POST">
+    <div class="d-grid">
+    <button class="btn btn-outline-danger btn-block mt-2 rounded-pill" type="submit">Remove</button>
 </div>
 </a>
-
 
 </div>
 {% endfor %}

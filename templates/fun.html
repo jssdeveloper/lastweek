@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Cities{% endblock %}
+
+{% block main %}
+
+<h1 class="display-3 fw-normal lh-1 mt-4 mb-4 text-center">City Gif</h1>
+<hr class="featurette-divider">
+
+<div class="row">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-6">
+        {% for i in range(city_list | length ) %}
+        <h1 class="text-center mt-2">{{city_list[i]}}</h1>
+        <img class="gif center" src="{{ gif_list[i] }}" alt="">
+        <hr class="featurette-divider mb-4">
+        {% endfor %}
+    </div>
+    <div class="col-md-3">
+        
+    </div>
+
+</div>
+<div class="mb-4"></div>
+
+
+
+
+<!-- IMPORT CITY NAME AND DB ID
+ALLOW TO SEARCH ANOTHER CITY
+WHEN DONE PRESS BUTTON CHANGE CITY -->
+
+
+
+
+
+
+{% endblock %} 
