@@ -2,11 +2,44 @@
 {% block title %}Cities{% endblock %}
 
 {% block main %}
+<h1 class="display-3 fw-normal lh-1 mt-4 mb-4 text-center">Random GIF API</h1>
+<hr class="featurette-divider">
+<div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+        {% for i in range(city_list | length ) %}
+     
+        <h1 class="text-center mt-4">{{city_list[i]}}</h1>
+        <hr class="featurette-divider">
+        <img class="gifcenter mb-4" src="{{ gif_list[i] }}" alt="">
+        {% endfor %}
+    </div>
+    <div class="col-gl-3"></div>
+</div>
+<hr class="featurette-divider">
 
+<!-- 
 <h1 class="display-3 fw-normal lh-1 mt-4 mb-4 text-center">City Gif</h1>
 <hr class="featurette-divider">
 
 <div class="row">
+    <div clas="col-lg-3">
+        <!-- reserved -->
+    <!-- </div>
+    
+    <div class="col-lg-6 text-center">
+        {% for i in range(city_list | length ) %}
+        <h1 class="text-center mt-2">{{city_list[i]}}</h1>
+        <img src="{{ gif_list[i] }}" alt="">
+        {% endfor %}
+    </div>
+    
+    <div class="col-gl-3">
+        <!-- reserved -->
+    <!-- </div>
+</div> -->
+
+<!-- <div class="row">
     <div class="col-md-3">
 
     </div>
@@ -23,6 +56,7 @@
 
 </div>
 <div class="mb-4"></div>
+</div> -->
 
 
 
